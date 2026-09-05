@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 240 6% 8%;
+        --foreground: 0 0% 98%;
+        --card: 240 6% 10%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 6% 10%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 142 72% 45%;
+        --primary-foreground: 144 70% 8%;
+        --secondary: 240 5% 16%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 5% 14%;
+        --muted-foreground: 240 5% 65%;
+        --accent: 240 5% 16%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 72% 52%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5% 18%;
+        --input: 240 5% 18%;
+        --ring: 142 72% 45%;
+        --radius: 0.75rem;
+        --safe: 142 72% 45%;
+        --warn: 38 92% 50%;
+        --danger: 0 72% 52%;
+        --surface-1: 240 6% 10%;
+        --surface-2: 240 5% 13%;
+        --surface-3: 240 5% 16%;
+    }
+    .dark {
+        --background: 240 6% 8%;
+        --foreground: 0 0% 98%;
+        --card: 240 6% 10%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 6% 10%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 142 72% 45%;
+        --primary-foreground: 144 70% 8%;
+        --secondary: 240 5% 16%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 5% 14%;
+        --muted-foreground: 240 5% 65%;
+        --accent: 240 5% 16%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 72% 52%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5% 18%;
+        --input: 240 5% 18%;
+        --ring: 142 72% 45%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+    body {
+        margin: 0;
+        @apply bg-zinc-950 text-zinc-100;
+        font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: hsl(142 72% 45% / 0.28);
+        color: #fff;
+    }
+}
+
+/* ---------- Texture ---------- */
+.tp-noise {
+    position: relative;
+}
+.tp-noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.35;
+    border-radius: inherit;
+}
+
+.tp-grid-bg {
+    background-image:
+        radial-gradient(
+            60rem 40rem at 50% -10rem,
+            hsl(142 72% 45% / 0.07),
+            transparent 70%
+        ),
+        linear-gradient(
+            to right,
+            hsl(240 5% 30% / 0.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            hsl(240 5% 30% / 0.12) 1px,
+            transparent 1px
+        );
+    background-size:
+        100% 100%,
+        56px 56px,
+        56px 56px;
+}
+
+/* ---------- Waveform ---------- */
+@keyframes tp-wave {
+    0%,
+    100% {
+        transform: scaleY(0.22);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+.tp-wave-bar {
+    transform-origin: center;
+    animation: tp-wave 900ms ease-in-out infinite;
+    animation-play-state: paused;
+}
+.tp-wave-playing .tp-wave-bar {
+    animation-play-state: running;
+}
+
+/* ---------- Pulses ---------- */
+@keyframes tp-ring-pulse {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.92);
+    }
+    70% {
+        opacity: 0;
+        transform: scale(1.35);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.35);
+    }
+}
+.tp-pulse {
+    animation: tp-ring-pulse 1.6s ease-out infinite;
+}
+
+@keyframes tp-scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(400%);
+    }
+}
+.tp-scan {
+    animation: tp-scan 2.4s linear infinite;
+}
+
+@keyframes tp-shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-3px);
+    }
+    40% {
+        transform: translateX(3px);
+    }
+    60% {
+        transform: translateX(-2px);
+    }
+    80% {
+        transform: translateX(2px);
+    }
+}
+.tp-shake {
+    animation: tp-shake 520ms ease-in-out;
+}
+
+.tp-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.tp-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(240 5% 30%);
+    border-radius: 999px;
+}
+.tp-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tp-pulse,
+    .tp-scan,
+    .tp-shake,
+    .tp-wave-bar {
+        animation: none !important;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
