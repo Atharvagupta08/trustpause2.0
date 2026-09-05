@@ -100,7 +100,7 @@ export const SmsPhishing = () => {
           Today &middot; 09:38
         </div>
 
-        <div className="max-w-[92%] rounded-2xl rounded-tl-sm border border-zinc-800 bg-zinc-900 p-3.5">
+        <div className="max-w-[92%] rounded-2xl rounded-tl-sm border border-white/10 bg-white/[0.06] p-3.5 backdrop-blur">
           <p className="text-[13px] leading-relaxed text-zinc-100">
             Bank account blocked in 10 mins. Update KYC:{" "}
             <button
@@ -225,6 +225,28 @@ export const SmsPhishing = () => {
           </p>
         </div>
 
+        <div className="mt-3" data-testid="countdown-bar-wrap">
+          <div className="mb-1 flex items-center justify-between text-[10px] uppercase tracking-[0.14em] text-zinc-500">
+            <span>Reflection window</span>
+            <span className="font-mono tabular-nums text-zinc-400">
+              {countdown.secondsLeft}s / 10s
+            </span>
+          </div>
+          <div
+            className="h-2 w-full overflow-hidden rounded-full bg-zinc-800"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(countdown.progress * 100)}
+            data-testid="countdown-bar"
+          >
+            <div
+              className={countdown.done ? "h-full rounded-full bg-emerald-400" : "h-full rounded-full bg-red-400"}
+              style={{ width: `${countdown.progress * 100}%` }}
+            />
+          </div>
+        </div>
+
         <div className="mt-4 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3" data-testid="domain-mismatch">
           <div className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Domain mismatch</div>
           <div className="mt-2 flex items-center gap-2">
@@ -259,7 +281,7 @@ export const SmsPhishing = () => {
             }}
           >
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            Open Official Bank App Instead
+            Open Official Bank App
           </button>
 
           <button

@@ -63,7 +63,7 @@ const Stage = () => {
       {viewMode === "phone" ? (
         <PhoneFrame>{body}</PhoneFrame>
       ) : (
-        <div className="tp-card-shadow overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
+        <div className="tp-glass overflow-hidden rounded-2xl">
           <div className="relative min-h-[620px]">{body}</div>
         </div>
       )}
@@ -78,8 +78,8 @@ const Shell = () => {
     <div className="tp-grid-bg min-h-screen bg-zinc-950 text-zinc-100">
       <Header />
 
-      <main className="mx-auto max-w-[1280px] px-4 pb-14 pt-5 sm:px-6 lg:px-8">
-        <section className="mb-5 flex flex-wrap items-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+      <main className="mx-auto max-w-[1440px] px-4 pb-14 pt-5 sm:px-6 lg:px-8">
+        <section className="tp-glass mb-5 flex flex-wrap items-center gap-3 rounded-2xl p-4">
           <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-emerald-500/25 bg-emerald-500/10">
             <ShieldHalf className="h-4 w-4 text-emerald-400" aria-hidden="true" />
           </span>

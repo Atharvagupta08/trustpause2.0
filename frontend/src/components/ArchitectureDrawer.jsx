@@ -11,7 +11,7 @@ export const ArchitectureDrawer = () => {
 
   return (
     <section
-      className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50"
+      className="tp-glass mt-6 rounded-2xl"
       data-testid="architecture-section"
     >
       <button

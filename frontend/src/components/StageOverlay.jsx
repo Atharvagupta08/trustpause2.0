@@ -63,7 +63,7 @@ export const StageOverlay = ({
             exit={{ opacity: 0, scale: 0.98, y: 6 }}
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
-              "tp-elev-2 mx-auto w-full max-w-[440px] rounded-2xl border bg-zinc-950/95 p-4 sm:p-5",
+              "tp-elev-2 tp-glass-strong mx-auto w-full max-w-[440px] rounded-2xl border p-4 sm:p-5",
               ring,
               className
             )}

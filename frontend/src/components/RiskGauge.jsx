@@ -52,6 +52,19 @@ export const RiskGauge = ({ value = 0, size = 56, stroke = 6, compact = false, t
           />
         )}
         <svg width={size} height={size} className="-rotate-90" aria-hidden="true">
+          <defs>
+            <linearGradient id={`${testId}-grad`} x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor={meta.stroke} stopOpacity="0.55" />
+              <stop offset="100%" stopColor={meta.stroke} stopOpacity="1" />
+            </linearGradient>
+            <filter id={`${testId}-glow`} x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="2.6" result="b" />
+              <feMerge>
+                <feMergeNode in="b" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
           <circle
             cx={size / 2}
             cy={size / 2}
@@ -65,11 +78,12 @@ export const RiskGauge = ({ value = 0, size = 56, stroke = 6, compact = false, t
             cy={size / 2}
             r={r}
             fill="none"
-            stroke={meta.stroke}
+            stroke={`url(#${testId}-grad)`}
             strokeWidth={stroke}
             strokeLinecap="round"
             strokeDasharray={c}
             strokeDashoffset={offset}
+            filter={`url(#${testId}-glow)`}
             style={{ transition: "stroke 240ms ease" }}
           />
         </svg>

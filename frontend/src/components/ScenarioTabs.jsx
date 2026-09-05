@@ -29,8 +29,8 @@ export const ScenarioTabs = () => {
               "tp-focus group relative flex flex-col items-start gap-1.5 rounded-xl border p-3 text-left",
               "transition-colors duration-150",
               active
-                ? "border-emerald-500/40 bg-zinc-900 text-zinc-50"
-                : "border-zinc-800 bg-zinc-900/40 text-zinc-300 hover:border-zinc-700 hover:bg-zinc-900/70"
+                ? "border-emerald-500/40 bg-emerald-500/[0.07] text-zinc-50 tp-glass tp-glow-emerald"
+                : "border-zinc-800 tp-glass text-zinc-300 hover:border-zinc-700"
             )}
           >
             <div className="flex w-full items-center justify-between gap-2">

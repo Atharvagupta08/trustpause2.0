@@ -146,7 +146,7 @@ export const ImpersonationCall = () => {
 
       <div className="space-y-4 p-4">
         {phase === "idle" && (
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 text-center">
+          <div className="tp-glass rounded-2xl p-5 text-center">
             <div className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-zinc-800 bg-zinc-950">
               <PhoneIncoming className="h-6 w-6 text-zinc-400" aria-hidden="true" />
             </div>

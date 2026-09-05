@@ -12,7 +12,7 @@ export const AppChrome = ({ icon: Icon, title, subtitle, accent = "zinc", right 
     blue: "text-sky-400",
   };
   return (
-    <div className="flex items-center gap-3 border-b border-zinc-800 bg-zinc-900/60 px-4 py-3">
+    <div className="flex items-center gap-3 border-b border-white/5 bg-white/[0.03] px-4 py-3 backdrop-blur">
       <ChevronLeft className="h-4 w-4 shrink-0 text-zinc-500" aria-hidden="true" />
       {Icon && (
         <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-zinc-800 bg-zinc-950">

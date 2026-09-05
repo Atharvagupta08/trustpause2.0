@@ -9,8 +9,8 @@ export const SCENARIOS = [
   {
     id: "sms",
     testId: "scenario-tab-kyc-phishing",
-    label: "KYC Phishing SMS",
-    short: "KYC SMS",
+    label: "SMS Phishing",
+    short: "SMS Phishing",
     icon: MessageSquareWarning,
     vector: "Link Handling Hook",
     baseRisk: 24,
@@ -20,8 +20,8 @@ export const SCENARIOS = [
   {
     id: "upi",
     testId: "scenario-tab-upi-transfer",
-    label: "Urgent Money Transfer (UPI)",
-    short: "UPI Transfer",
+    label: "UPI Payment Lock",
+    short: "UPI Payment Lock",
     icon: IndianRupee,
     vector: "Accessibility Event Hook",
     baseRisk: 32,
@@ -31,8 +31,8 @@ export const SCENARIOS = [
   {
     id: "call",
     testId: "scenario-tab-digital-arrest",
-    label: "Digital Arrest / Impersonation Call",
-    short: "Digital Arrest",
+    label: "Digital Arrest Call",
+    short: "Digital Arrest Call",
     icon: PhoneIncoming,
     vector: "CallScreening API",
     baseRisk: 38,
@@ -42,8 +42,8 @@ export const SCENARIOS = [
   {
     id: "deepfake",
     testId: "scenario-tab-deepfake-voice",
-    label: "Deepfake Voice Emergency",
-    short: "Deepfake Voice",
+    label: "Deepfake Audio",
+    short: "Deepfake Audio",
     icon: AudioLines,
     vector: "On-device Audio Classifier",
     baseRisk: 28,

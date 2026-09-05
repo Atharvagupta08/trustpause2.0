@@ -18,7 +18,7 @@ export const TelemetryPanel = ({ className }) => {
 
   return (
     <aside className={cn("space-y-4", className)} data-testid="telemetry-panel">
-      <section className="tp-card-shadow rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+      <section className="tp-glass rounded-xl p-4">
         <div className="mb-3 flex items-center justify-between">
           <h2
             className="flex items-center gap-2 text-sm font-semibold text-zinc-100"
@@ -49,7 +49,7 @@ export const TelemetryPanel = ({ className }) => {
         </div>
       </section>
 
-      <section className="tp-card-shadow rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+      <section className="tp-glass rounded-xl p-4">
         <h2
           className="mb-3 flex items-center gap-2 text-sm font-semibold text-zinc-100"
           style={{ fontFamily: '"Space Grotesk", ui-sans-serif' }}
@@ -92,7 +92,7 @@ export const TelemetryPanel = ({ className }) => {
         )}
       </section>
 
-      <section className="tp-card-shadow rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+      <section className="tp-glass rounded-xl p-4">
         <h2
           className="mb-3 flex items-center gap-2 text-sm font-semibold text-zinc-100"
           style={{ fontFamily: '"Space Grotesk", ui-sans-serif' }}

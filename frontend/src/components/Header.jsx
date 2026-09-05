@@ -27,15 +27,15 @@ export const Header = () => {
 
   return (
     <header
-      className="sticky top-0 z-40 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60"
+      className="sticky top-0 z-40 border-b border-zinc-800/80 tp-glass-strong"
       data-testid="app-header"
     >
-      <div className="mx-auto flex max-w-[1280px] flex-col gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="relative grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-emerald-500/30 bg-emerald-500/10">
+            <div className="relative grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-emerald-500/40 bg-emerald-500/10 tp-glow-emerald">
               <ShieldCheck className="h-5 w-5 text-emerald-400" aria-hidden="true" />
-              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="tp-led absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 text-emerald-400" />
             </div>
             <div className="leading-tight">
               <div
@@ -45,28 +45,50 @@ export const Header = () => {
               >
                 TrustPause <span className="text-emerald-400">2.0</span>
               </div>
-              <div className="text-[11px] uppercase tracking-[0.16em] text-zinc-500 sm:text-xs">
-                Ambient Human Firewall
+              <div className="whitespace-nowrap text-[11px] uppercase tracking-[0.14em] text-zinc-500 sm:text-xs">
+                The Ambient Human Firewall
               </div>
             </div>
           </div>
 
-          <div className="xl:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <RiskGauge value={risk} size={44} stroke={5} compact testId="risk-gauge-mobile" />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-          <div className="hidden xl:block">
-            <RiskGauge value={risk} size={56} stroke={6} />
           </div>
 
           <span
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium",
+              "hidden items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-[11px] font-medium xl:inline-flex",
               st.cls
             )}
             data-testid="status-chip"
+          >
+            <Activity className="h-3 w-3" aria-hidden="true" />
+            {st.label}
+          </span>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <span
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-300 tp-glow-emerald"
+            data-testid="protection-badge"
+          >
+            <span className="tp-led h-2 w-2 rounded-full bg-emerald-400 text-emerald-400" />
+            Protection: Active
+          </span>
+
+          <div className="hidden xl:flex xl:items-center xl:gap-2">
+            <RiskGauge value={risk} size={52} stroke={6} compact />
+            <span className="whitespace-nowrap font-mono text-[11px] text-zinc-500">
+              risk {Math.round(risk)}/100
+            </span>
+          </div>
+
+          <span
+            className={cn(
+              "inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-[11px] font-medium xl:hidden",
+              st.cls
+            )}
+            data-testid="status-chip-mobile"
           >
             <Activity className="h-3 w-3" aria-hidden="true" />
             {st.label}

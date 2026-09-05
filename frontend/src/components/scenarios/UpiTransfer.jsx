@@ -97,7 +97,7 @@ export const UpiTransfer = () => {
       />
 
       <div className="space-y-4 p-4">
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-center">
+        <div className="tp-glass rounded-2xl p-4 text-center">
           <div className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Paying</div>
           <div
             className="mt-1 flex items-center justify-center gap-1 text-3xl font-semibold text-zinc-50 sm:text-4xl"

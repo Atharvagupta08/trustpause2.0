@@ -164,7 +164,7 @@ export const DeepfakeVoice = () => {
 
       <div className="space-y-4 p-4">
         <div
-          className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4"
+          className="tp-glass rounded-2xl p-4"
           data-testid="deepfake-audio-card"
         >
           <div className="flex items-start justify-between gap-3">
@@ -229,7 +229,7 @@ export const DeepfakeVoice = () => {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+        <div className="tp-glass rounded-2xl p-4">
           <div className="flex items-center justify-between gap-2">
             <h3
               className="text-sm font-semibold text-zinc-100"
